@@ -1,55 +1,88 @@
 import matplotlib.pyplot as plt
 
 
-def diff(array):
-    diff_array = []
-    for i in range(len(array) - 1):
-        ndiff = array[i + 1] - array[i]
-        diff_array.append(ndiff)
+def sir(s0, i0, r0, alpha, beta, t):
+    """
+    Calculates SIR model for t weeks
 
-    return diff_array
+    :param s0:(int) starting number of susceptible
+    :param i0:(int) starting number of infected
+    :param r0:(int) starting number of recovered
+    :param alpha: (float) infection rate
+    :param beta: (float) recovery rate
+    :param t: (int) timespan
 
+    :returns susceptible: (list) numbers of susceptible
+    :returns infected:(list) numbers of infected
+    :returns recovered:(list) numbers of recovered
+    :returns t: (int) param t + 1
+    """
 
-def sir(s0, i0, r0, a, b, T):
-    sarr = []
-    iarr = []
-    rarr = []
-    for i in range(T):
-        s = s0 - a * s0 * i0
-        i = i0 + a * s0 * i0 - b * i0
-        r = r0 + b * i0
-        sarr.append(s)
-        iarr.append(i)
-        rarr.append(r)
+    susceptible = [s0]
+    infected = [i0]
+    recovered = [r0]
+    for _ in range(t):
+        s = s0 - alpha * s0 * i0
+        i = i0 + alpha * s0 * i0 - beta * i0
+        r = r0 + beta * i0
+        susceptible.append(s)
+        infected.append(i)
+        recovered.append(r)
         s0 = s
         i0 = i
         r0 = r
+    return susceptible, infected, recovered, t + 1
 
-    return sarr, iarr, rarr, T
+
+def dif(lst):
+    '''
+    Calculates the diffrence in the list by lopping through the first and second time stample.
+    :param lst: (list)
+    :returns lst2: (list, len lst-1)
+    '''
+    lst2 = []
+    for i in range(len(lst) - 1):
+        lst2.append(lst[i + 1] - lst[i])
+    return lst2
 
 
-def plot_sir(suceptible, infected, recoverd, T, death_tolls=True):
-    time = [i for i in range(T)]
-    if death_tolls:
-        fig, axs = plt.subplots(2)
-        ax1 = axs[0]
-        ax2 = axs[1]
-        deaths = diff(recoverd)
-        deaths.insert(0, 0)
-        ax2.plot(time, deaths, marker='o', color='red', label='death tolls')
-        ax2.legend()
+def draw_sirmodel(susceptible, infected, recovered, t, ):
+    """
+    Plots the SIR-model over t weeks
 
-    else:
-        fig, ax1 = plt.subplots()
+    :param susceptible: (list, len t) mubers of susceptible
+    :param infected: (list, len t) mubers of infected
+    :param recovered: (list, len t) mubers of recovered
+    :param t:
 
-    ax1.plot(time, suceptible, marker='o', color='blue', label='suceptible')
-    ax1.plot(time, infected, marker='o', color='orange', label='infected')
-    ax1.plot(time, recoverd, marker='o', color='green', label='recovered')
+    """
+    time = [i for i in range(t)]
+
+    fig, axs = plt.subplots(2)
+    ax1, ax2 = axs
+    ax1.plot(time, susceptible, marker='', color='blue', label='susceptible')
+    ax1.plot(time, infected, marker='', color='orange', label='infected')
+    ax1.plot(time, recovered, marker='', color='green', label='recovered')
+
+    deaths = dif(recovered)
+    deaths.insert(0, 0)
+    deaths = [i * 0.05 for i in deaths]
+    total_deaths = 0
+    for i in deaths:
+        total_deaths += i
+    ax2.plot(time, deaths, marker='', color='red', label=str(total_deaths))
+
     ax1.legend()
+    ax2.legend()
 
     plt.show()
 
 
-s, i, r, T = sir(995, 5, 0, 0.0006, 1 / 5, 100)
+n = 1000
+alpha = 0.001
 
-plot_sir(s, i, r, T)
+beta = 1 / 7
+s, i, r, t = sir(n, 5, 0, alpha, beta, 40)
+draw_sirmodel(s, i, r, t)
+
+print('running')
