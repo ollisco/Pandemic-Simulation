@@ -42,7 +42,7 @@ class Covid:
 
 
     def new(self):
-        self.square = 5
+        self.square = 3
         self.width = len(self.grid[0])*self.square
         self.height = len(self.grid)*self.square
 
@@ -192,11 +192,17 @@ class Covid:
             for j in range(len(self.grid[i])):
                 draw_square(self.screen, colors[self.grid[i][j]], self.square * j, self.square * i, self.square, self.square)
 
-
-        self.draw_text('day: ' + str(self.day), 60, (255, 255, 0), 300, 600)
+        #1920x1080
+        """self.draw_text('day: ' + str(self.day), 60, (255, 255, 0), 300, 600)
         self.draw_text('suceptible: ' + str(len(self.sucseptible)), 60, (255, 255, 255), 300, 700)
         self.draw_text('infected: ' + str(len(self.infected)), 60, (100 ,0, 0), 300, 800)
-        self.draw_text('recovered: ' + str(len(self.recovered)), 60, (0, 100, 12), 300, 900)
+        self.draw_text('recovered: ' + str(len(self.recovered)), 60, (0, 100, 12), 300, 900)"""
+
+        # 1440x980
+        self.draw_text('day: ' + str(self.day), 60, (255, 255, 0), 200, 250)
+        self.draw_text('suceptible: ' + str(len(self.sucseptible)), 60, (255, 255, 255), 200, 350)
+        self.draw_text('infected: ' + str(len(self.infected)), 60, (100, 0, 0), 200, 450)
+        self.draw_text('recovered: ' + str(len(self.recovered)), 60, (0, 100, 12), 200, 550)
 
         pygame.display.flip()
 
