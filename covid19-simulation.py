@@ -42,11 +42,16 @@ class Covid:
 
 
     def new(self):
+        """
+        Initializes new vizualisation
+        """
+        # sqreensize based on the grid
         self.square = 3
         self.width = len(self.grid[0])*self.square
         self.height = len(self.grid)*self.square
 
         print(print(pygame.font.get_fonts()))
+
 
         self.sucseptible = []
         for i in range(len(self.grid)):
@@ -60,6 +65,7 @@ class Covid:
         self.deaths = 0
         self.day = 0
 
+        # screen object
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.run()
 
@@ -68,6 +74,9 @@ class Covid:
 
 
     def run(self):
+        """
+        The runloop
+        """
         while self.running:
             self.clock.tick(60)
             self.events()
@@ -78,20 +87,28 @@ class Covid:
 
 
     def events(self):
+        """
+        Keyboard and mouse events
+        """
         for event in pygame.event.get():
+            # Quit
             if event.type == pygame.QUIT:
                 self.running = False
                 self.alive = False
 
             if event.type == pygame.KEYDOWN:
+                # Quit
                 if event.key == pygame.K_ESCAPE:
                     self.running = False
                     self.alive = False
 
+                # Pause
                 if event.key == pygame.K_SPACE:
                     self.updating = True if not self.updating else False
 
+            # Place and remove infected
             try:
+                # Adding
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
                     col, row = (int(pos[0] / self.square), int(pos[1] / self.square))  # Grid coordinates
@@ -102,7 +119,7 @@ class Covid:
 
 
 
-                # Removing nodes
+                # Removing
                 if pygame.mouse.get_pressed()[2]:
                     pos = pygame.mouse.get_pos()
                     col, row = (int(pos[0] / self.square), int(pos[1] / self.square))  # Grid coordinates
@@ -114,6 +131,9 @@ class Covid:
                 print(e)
 
     def find_neighbours(self, i , j):
+        """
+        :returns: list of neighbouring nodes in the grid
+        """
         neighbours = []
 
         cords = [(i-1, j), (i+1, j), (i, j-1), (i, j+1)]
@@ -135,8 +155,13 @@ class Covid:
 
 
     def update(self):
+        """
+        Updates all data
+        """
+        # Day counter
         self.day += 1
         # Infect
+
         preliminary_infections = []
         preliminary_recovered = []
         for row, col in self.infected:
@@ -156,6 +181,7 @@ class Covid:
         for cordinate in preliminary_infections:
             self.sucseptible.remove(cordinate)
 
+        # Risk of spreading to random locations
         if self.infected:
             if self.spread(self.gamma):
                 if self.sucseptible:
@@ -163,10 +189,6 @@ class Covid:
                     self.grid[i][j] = 1
                     self.infected.append((i, j))
                     self.sucseptible.remove((i, j))
-
-
-
-
 
 
         for cordinate in preliminary_recovered:
@@ -186,6 +208,9 @@ class Covid:
         self.screen.blit(text_surface, text_rect)
 
     def draw(self):
+        """
+        Draws the new data onto the screen
+        """
         self.screen.fill((255, 255, 255))
         colors = [(255, 255, 255), (255, 0, 0), (0, 100, 0), (0, 0, 100)]
         for i in range(len(self.grid)):
