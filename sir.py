@@ -40,10 +40,17 @@ def dif(lst):
     :param lst: (list)
     :returns lst2: (list, len lst-1)
     '''
-    lst2 = []
-    for i in range(len(lst) - 1):
-        lst2.append(lst[i + 1] - lst[i])
-    return lst2
+    try:
+        if isinstance(lst, list):
+            lst2 = []
+            for i in range(len(lst) - 1):
+                lst2.append(lst[i + 1] - lst[i])
+            return lst2
+        else:
+            raise NotList
+
+    except NotList:
+        print("parameter lst needs to be a list")
 
 
 def draw_sirmodel(susceptible, infected, recovered, t, ):
