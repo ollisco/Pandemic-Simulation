@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e9779535-00fd-4f4c-8a99-3ab0b6fefa08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/ghostclanlaserital.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/virus-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid19-simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid19-simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid19-simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fullworld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fullworld.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sir.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/wrld.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,24 +46,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZRoFtNAucqX1JYKDwqmIqLzKNt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pathfinding-Visualization" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\assets" />
+      <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.covid19-simulation">
     <configuration name="covid19-simulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -54,7 +78,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/covid19-simulation.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,6 +137,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -131,12 +156,33 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603572087941">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603572087941" />
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom" timestamp="1603576620705">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
+    <state width="3413" height="385" key="GridCell.Tab.0.center" timestamp="1603576620705">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="3413" height="385" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
+    <state width="3413" height="385" key="GridCell.Tab.0.left" timestamp="1603576620705">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="3413" height="385" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
+    <state width="3413" height="385" key="GridCell.Tab.0.right" timestamp="1603576620705">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="3413" height="385" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
   </component>
 </project>

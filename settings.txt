@@ -1,0 +1,4 @@
+alpha=0.75
+beta=0.071428
+gamma=0.05
+mortalityrate=0

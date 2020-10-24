@@ -8,26 +8,29 @@ import random
 def draw_square(surface, color, x, y, width, height):
     pygame.draw.rect(surface, color, ((x, y), (width, height)), 0)
 
-class Covid:
+class Pandemic:
     def __init__(self):
         pygame.init()
+        pygame.display.set_caption('Pandemic Simulation')
+        pygame.display.set_icon(pygame.image.load('assets/virus-icon.png'))
         self.grid = []
 
         self.clock = pygame.time.Clock()
+        self.fps = 400
         self.alive = True
         self.running = True
         self.updating = False
 
 
 
-        self.alpha = 0.5
-        self.beta = 0.35
-        self.gamma = 0.1
+        self.alpha = 0.25 # infection rate
+        self.beta = 1/14
+        self.gamma = 0.05
 
         self.load_data()
 
     def load_data(self):
-        with open('fullworld.txt', 'r') as file:
+        with open('assets/fullworld.txt', 'r') as file:
             c = 0
             for i in file:
                 self.grid.append([])
@@ -36,7 +39,12 @@ class Covid:
                         self.grid[c].append(int(j))
                 c += 1
 
-        self.grid[60][300] = 1
+        with open('settings.txt', 'r') as settingsfile:
+            self.alpha = float(settingsfile.readline().split("=")[1].replace("\n", ""))
+            self.beta = float(settingsfile.readline().split("=")[1].replace("\n", ""))
+            self.gamma = float(settingsfile.readline().split("=")[1].replace("\n", ""))
+            self.mortalityrate = float(settingsfile.readline().split("=")[1].replace("\n", ""))
+        #self.grid[60][300] = 1
 
 
 
@@ -46,11 +54,10 @@ class Covid:
         Initializes new vizualisation
         """
         # sqreensize based on the grid
-        self.square = 3
+        self.square = 4
         self.width = len(self.grid[0])*self.square
         self.height = len(self.grid)*self.square
 
-        print(print(pygame.font.get_fonts()))
 
 
         self.sucseptible = []
@@ -60,7 +67,8 @@ class Covid:
                     self.sucseptible.append((i, j))
 
 
-        self.infected = [(60, 300)]
+       #self.infected = [(60, 300)]
+        self.infected = []
         self.recovered = []
         self.deaths = 0
         self.day = 0
@@ -78,7 +86,7 @@ class Covid:
         The runloop
         """
         while self.running:
-            self.clock.tick(60)
+            self.clock.tick(self.fps)
             self.events()
 
             if self.updating and self.infected:
@@ -105,6 +113,7 @@ class Covid:
                 # Pause
                 if event.key == pygame.K_SPACE:
                     self.updating = True if not self.updating else False
+                    self.fps = 60
 
             # Place and remove infected
             try:
@@ -153,6 +162,8 @@ class Covid:
     def spread(self, gamma):
         return True if random.random() < gamma else False
 
+    def die(self, mortalityrate):
+        return True if random.random() < mortalityrate else False
 
     def update(self):
         """
@@ -172,12 +183,18 @@ class Covid:
                     if self.infect(self.alpha):
                         self.grid[i][j] = 1
                         preliminary_infections.append((i, j))
-            # Recover?
+            # Recover
             if self.recover(self.beta):
-                self.grid[row][col] = 2
-                self.recovered.append((row, col))
-                preliminary_recovered.append((row, col))
+                    if self.die(self.mortalityrate):
 
+                        self.grid[row][col] = 4
+                        self.recovered.append((row, col))
+                        preliminary_recovered.append((row, col))
+
+                    else:
+                        self.grid[row][col] = 2
+                        self.recovered.append((row, col))
+                        preliminary_recovered.append((row, col))
         for cordinate in preliminary_infections:
             self.sucseptible.remove(cordinate)
 
@@ -201,10 +218,11 @@ class Covid:
 
 
     def draw_text(self, text, size, color, x, y):
-        font = pygame.font.Font(pygame.font.match_font('arial'), size)
+        font1 = pygame.font.Font(pygame.font.match_font('arial'), size)
+        font = pygame.font.Font("assets/ghostclanlaserital.ttf", size)
         text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect()
-        text_rect.midtop = (x, y)
+        text_rect.midleft = (x, y)
         self.screen.blit(text_surface, text_rect)
 
     def draw(self):
@@ -212,30 +230,30 @@ class Covid:
         Draws the new data onto the screen
         """
         self.screen.fill((255, 255, 255))
-        colors = [(255, 255, 255), (255, 0, 0), (0, 100, 0), (0, 0, 100)]
+        colors = [(255, 255, 255), (255, 0, 0), (0, 100, 0), (0, 0, 100), (0,0,0)]
         for i in range(len(self.grid)):
             for j in range(len(self.grid[i])):
                 draw_square(self.screen, colors[self.grid[i][j]], self.square * j, self.square * i, self.square, self.square)
 
-        #1920x1080
-        """self.draw_text('day: ' + str(self.day), 60, (255, 255, 0), 300, 600)
-        self.draw_text('suceptible: ' + str(len(self.sucseptible)), 60, (255, 255, 255), 300, 700)
-        self.draw_text('infected: ' + str(len(self.infected)), 60, (100 ,0, 0), 300, 800)
-        self.draw_text('recovered: ' + str(len(self.recovered)), 60, (0, 100, 12), 300, 900)"""
+
 
         # 1440x980
-        self.draw_text('day: ' + str(self.day), 60, (255, 255, 0), 200, 250)
-        self.draw_text('suceptible: ' + str(len(self.sucseptible)), 60, (255, 255, 255), 200, 350)
-        self.draw_text('infected: ' + str(len(self.infected)), 60, (100, 0, 0), 200, 450)
-        self.draw_text('recovered: ' + str(len(self.recovered)), 60, (0, 100, 12), 200, 550)
+        self.draw_text('Day: ' + str(self.day), 40, (255, 255, 0), 20, 50)
+        self.draw_text('Infected: ' + str(len(self.infected)), 40, (100, 0, 0), 20, 500)
+        self.draw_text('Recovered: ' + str(len(self.recovered)), 40, (0, 100, 12), 20, 600)
+        self.draw_text('Suceptible: ' + str(len(self.sucseptible)), 40, (200, 200, 200), 20, 700)
+
+        self.draw_text('Leftclick to infect, Rightclick to remove infection, Space to start and pause simulation', 25, (0, 0, 0), 200, self.height-20)
+
+
 
         pygame.display.flip()
 
 
 
+if __name__ == '__main__':
+    c = Pandemic()
+    while c.alive:
+        c.new()
 
-c = Covid()
-while c.alive:
-    c.new()
-
-pygame.quit()
+    pygame.quit()
