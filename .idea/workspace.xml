@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9779535-00fd-4f4c-8a99-3ab0b6fefa08" name="Default Changelist" comment="Code ready, needs README.md update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e9779535-00fd-4f4c-8a99-3ab0b6fefa08" name="Default Changelist" comment="Completed, with executable">
+      <change afterPath="$PROJECT_DIR$/assets/game_icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/virus-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/window_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/settings.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +48,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pathfinding-Visualization" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19" />
       <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\assets" />
@@ -171,7 +175,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1603576688049</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Completed, with executable">
+      <created>1603703192777</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1603703192777</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,32 +198,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Code ready, needs README.md update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code ready, needs README.md update" />
+    <MESSAGE value="Completed, with executable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed, with executable" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603702864571">
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603703255559">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603702864571" />
-    <state width="3413" height="385" key="GridCell.Tab.0.bottom" timestamp="1603577084091">
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703255559" />
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom" timestamp="1603703180948">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084091" />
-    <state width="3413" height="385" key="GridCell.Tab.0.center" timestamp="1603577084090">
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703180948" />
+    <state width="3413" height="385" key="GridCell.Tab.0.center" timestamp="1603703180948">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
-    <state width="3413" height="385" key="GridCell.Tab.0.left" timestamp="1603577084090">
+    <state width="3413" height="385" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703180948" />
+    <state width="3413" height="385" key="GridCell.Tab.0.left" timestamp="1603703180947">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
-    <state width="3413" height="385" key="GridCell.Tab.0.right" timestamp="1603577084090">
+    <state width="3413" height="385" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703180947" />
+    <state width="3413" height="385" key="GridCell.Tab.0.right" timestamp="1603703180948">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
-    <state x="1212" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603576690319">
+    <state width="3413" height="385" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703180948" />
+    <state x="1212" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603703202097">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1212" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576690319" />
+    <state x="1212" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603703202097" />
   </component>
 </project>

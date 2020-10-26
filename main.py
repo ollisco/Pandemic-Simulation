@@ -16,7 +16,7 @@ class Pandemic:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('Pandemic Simulation')
-        pygame.display.set_icon(pygame.image.load('assets/virus-icon.png'))
+        pygame.display.set_icon(pygame.image.load('assets/window_icon.png'))
         self.grid = []
 
         self.clock = pygame.time.Clock()
