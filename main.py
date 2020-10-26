@@ -1,12 +1,16 @@
 import pygame
 import random
+
 """
 1. place start
 
 
 """
+
+
 def draw_square(surface, color, x, y, width, height):
     pygame.draw.rect(surface, color, ((x, y), (width, height)), 0)
+
 
 class Pandemic:
     def __init__(self):
@@ -21,10 +25,8 @@ class Pandemic:
         self.running = True
         self.updating = False
 
-
-
-        self.alpha = 0.25 # infection rate
-        self.beta = 1/14
+        self.alpha = 0.25  # infection rate
+        self.beta = 1 / 14
         self.gamma = 0.05
 
         self.load_data()
@@ -44,10 +46,7 @@ class Pandemic:
             self.beta = float(settingsfile.readline().split("=")[1].replace("\n", ""))
             self.gamma = float(settingsfile.readline().split("=")[1].replace("\n", ""))
             self.mortalityrate = float(settingsfile.readline().split("=")[1].replace("\n", ""))
-        #self.grid[60][300] = 1
-
-
-
+        # self.grid[60][300] = 1
 
     def new(self):
         """
@@ -55,10 +54,8 @@ class Pandemic:
         """
         # sqreensize based on the grid
         self.square = 4
-        self.width = len(self.grid[0])*self.square
-        self.height = len(self.grid)*self.square
-
-
+        self.width = len(self.grid[0]) * self.square
+        self.height = len(self.grid) * self.square
 
         self.sucseptible = []
         for i in range(len(self.grid)):
@@ -66,8 +63,7 @@ class Pandemic:
                 if self.grid[i][j] == 0:
                     self.sucseptible.append((i, j))
 
-
-       #self.infected = [(60, 300)]
+        # self.infected = [(60, 300)]
         self.infected = []
         self.recovered = []
         self.deaths = 0
@@ -80,7 +76,6 @@ class Pandemic:
     def startscreen(self):
         pass
 
-
     def run(self):
         """
         The runloop
@@ -92,7 +87,6 @@ class Pandemic:
             if self.updating and self.infected:
                 self.update()
             self.draw()
-
 
     def events(self):
         """
@@ -126,8 +120,6 @@ class Pandemic:
                         self.infected.append((row, col))
                         self.sucseptible.remove((row, col))
 
-
-
                 # Removing
                 if pygame.mouse.get_pressed()[2]:
                     pos = pygame.mouse.get_pos()
@@ -139,19 +131,18 @@ class Pandemic:
             except Exception as e:
                 print(e)
 
-    def find_neighbours(self, i , j):
+    def find_neighbours(self, i, j):
         """
         :returns: list of neighbouring nodes in the grid
         """
         neighbours = []
 
-        cords = [(i-1, j), (i+1, j), (i, j-1), (i, j+1)]
+        cords = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
         for row, col in cords:
-            if 0 <= row <= len(self.grid)-1:
-                if 0 <= col <= len(self.grid[0])-1:
+            if 0 <= row <= len(self.grid) - 1:
+                if 0 <= col <= len(self.grid[0]) - 1:
                     neighbours.append((row, col))
         return neighbours
-
 
     def infect(self, alpha):
         return True if random.random() < alpha else False
@@ -185,16 +176,16 @@ class Pandemic:
                         preliminary_infections.append((i, j))
             # Recover
             if self.recover(self.beta):
-                    if self.die(self.mortalityrate):
+                if self.die(self.mortalityrate):
 
-                        self.grid[row][col] = 4
-                        self.recovered.append((row, col))
-                        preliminary_recovered.append((row, col))
+                    self.grid[row][col] = 4
+                    self.recovered.append((row, col))
+                    preliminary_recovered.append((row, col))
 
-                    else:
-                        self.grid[row][col] = 2
-                        self.recovered.append((row, col))
-                        preliminary_recovered.append((row, col))
+                else:
+                    self.grid[row][col] = 2
+                    self.recovered.append((row, col))
+                    preliminary_recovered.append((row, col))
         for cordinate in preliminary_infections:
             self.sucseptible.remove(cordinate)
 
@@ -207,18 +198,13 @@ class Pandemic:
                     self.infected.append((i, j))
                     self.sucseptible.remove((i, j))
 
-
         for cordinate in preliminary_recovered:
             self.infected.remove(cordinate)
 
-
-
         self.infected += preliminary_infections
 
-
-
     def draw_text(self, text, size, color, x, y):
-        font1 = pygame.font.Font(pygame.font.match_font('arial'), size)
+        #font = pygame.font.Font(pygame.font.match_font('arial'), size)
         font = pygame.font.Font("assets/ghostclanlaserital.ttf", size)
         text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect()
@@ -230,30 +216,26 @@ class Pandemic:
         Draws the new data onto the screen
         """
         self.screen.fill((255, 255, 255))
-        colors = [(255, 255, 255), (255, 0, 0), (0, 100, 0), (0, 0, 100), (0,0,0)]
+        colors = [(255, 255, 255), (255, 0, 0), (0, 100, 0), (0, 0, 100), (0, 0, 0)]
         for i in range(len(self.grid)):
             for j in range(len(self.grid[i])):
-                draw_square(self.screen, colors[self.grid[i][j]], self.square * j, self.square * i, self.square, self.square)
+                draw_square(self.screen, colors[self.grid[i][j]], self.square * j, self.square * i, self.square,
+                            self.square)
 
-
-
-        # 1440x980
+           # 1440x980
         self.draw_text('Day: ' + str(self.day), 40, (255, 255, 0), 20, 50)
         self.draw_text('Infected: ' + str(len(self.infected)), 40, (100, 0, 0), 20, 500)
         self.draw_text('Recovered: ' + str(len(self.recovered)), 40, (0, 100, 12), 20, 600)
         self.draw_text('Suceptible: ' + str(len(self.sucseptible)), 40, (200, 200, 200), 20, 700)
 
-        self.draw_text('Leftclick to infect, Rightclick to remove infection, Space to start and pause simulation', 25, (0, 0, 0), 200, self.height-20)
-
-
+        self.draw_text('Leftclick to infect, Rightclick to remove infection, Space to start and pause simulation', 25,
+                       (0, 0, 0), 200, self.height - 20)
 
         pygame.display.flip()
 
 
+c = Pandemic()
+while c.alive:
+    c.new()
 
-if __name__ == '__main__':
-    c = Pandemic()
-    while c.alive:
-        c.new()
-
-    pygame.quit()
+pygame.quit()

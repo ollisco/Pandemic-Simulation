@@ -19,16 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9779535-00fd-4f4c-8a99-3ab0b6fefa08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/ghostclanlaserital.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/virus-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.txt" afterDir="false" />
+    <list default="true" id="e9779535-00fd-4f4c-8a99-3ab0b6fefa08" name="Default Changelist" comment="Code ready, needs README.md update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid19-simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fullworld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fullworld.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sir.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/wrld.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/settings.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\assets" />
       <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19" />
+      <recent name="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.covid19-simulation">
+  <component name="RunManager" selected="Python.main">
     <configuration name="covid19-simulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sir_covid19" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,6 +73,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\Olle Jernström\PycharmProjects\sir_covid19\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sir_covid19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,6 +146,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.covid19-simulation" />
         <item itemvalue="Python.tomisretardedxd" />
         <item itemvalue="Python.sir" />
@@ -149,6 +165,13 @@
       <option name="presentableId" value="Default" />
       <updated>1584811166432</updated>
     </task>
+    <task id="LOCAL−00001" summary="Code ready, needs README.md update">
+      <created>1603576688049</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1603576688049</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,26 +186,34 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Code ready, needs README.md update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code ready, needs README.md update" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603572087941">
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603702864571">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603572087941" />
-    <state width="3413" height="385" key="GridCell.Tab.0.bottom" timestamp="1603576620705">
+    <state x="1399" y="479" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603702864571" />
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom" timestamp="1603577084091">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
-    <state width="3413" height="385" key="GridCell.Tab.0.center" timestamp="1603576620705">
+    <state width="3413" height="385" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084091" />
+    <state width="3413" height="385" key="GridCell.Tab.0.center" timestamp="1603577084090">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
-    <state width="3413" height="385" key="GridCell.Tab.0.left" timestamp="1603576620705">
+    <state width="3413" height="385" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
+    <state width="3413" height="385" key="GridCell.Tab.0.left" timestamp="1603577084090">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
-    <state width="3413" height="385" key="GridCell.Tab.0.right" timestamp="1603576620705">
+    <state width="3413" height="385" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
+    <state width="3413" height="385" key="GridCell.Tab.0.right" timestamp="1603577084090">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="3413" height="385" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576620705" />
+    <state width="3413" height="385" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603577084090" />
+    <state x="1212" y="367" key="Vcs.Push.Dialog.v2" timestamp="1603576690319">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1212" y="367" key="Vcs.Push.Dialog.v2/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1603576690319" />
   </component>
 </project>
